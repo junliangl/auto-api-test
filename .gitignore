@@ -3,5 +3,5 @@
 **/__pycache__
 */logs/db/*
 */logs/http/*
-*/logs/test/*
+*/logs/test/*rm
 **/.DS_Store
