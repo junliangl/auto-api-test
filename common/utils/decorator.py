@@ -33,7 +33,7 @@ class Decorator:
         def wrapper(*args, **kwargs):
             nonlocal instance
             if instance is None:
-                instance = super(cls, cls).__new__(cls)
+                instance = cls(*args, **kwargs)
             return instance
 
         cls.__new__ = wrapper
@@ -52,7 +52,7 @@ class Decorator:
             if instance is None:
                 with lock:
                     if instance is None:
-                        instance = super(cls, cls).__new__(cls)
+                        instance = cls(*args, **kwargs)
             return instance
 
         cls.__new__ = wrapper
